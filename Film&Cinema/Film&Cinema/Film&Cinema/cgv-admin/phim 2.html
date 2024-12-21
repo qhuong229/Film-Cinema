@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film&Cinema</title>
+
+    <!-- CSS only -->
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      table .bi-check-circle-fill {
+        color: green;
+      }
+
+      table .bi-x-circle-fill {
+        color: red;
+      }
+
+      table .btn.btn-danger {
+        font-size: 14px;
+      }
+    </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar" class="">
+        <div class="sidebar-header" id="sidebar-title">
+          <h3><img width="30" src="./image 1.png"/>Film&Cinema</h3>
+          <strong><i class="bi bi-list"></i></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="">
+            <a href="./index.html">
+              <i class="bi bi-house"></i>
+              Trang chủ
+            </a>
+          </li>
+          <li class="active">
+            <a href="./phim.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý phim
+            </a>
+          </li>
+          <li class="">
+            <a href="rap.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý rạp
+            </a>
+          </li>
+          <li class="">
+            <a href="phongchieu.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý phòng chiếu
+            </a>
+          </li>
+          <li class="">
+            <a href="suatchieu.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý suất chiếu
+            </a>
+          </li>
+          <li class="">
+            <a href="ve.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý vé
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content Holder -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">DANH SÁCH PHIM</a>
+            <button class="btn btn-danger"><a href="../admin.html">Đăng xuất</a></button>
+        </nav>
+        <div class="search-bar">
+          <input  
+                  class="form-button" 
+                  class="bg-light border shadow  py-2 px-3"
+                  placeholder="Tìm kiếm"
+                  type="text"  />
+                    <button class="btn btn-outline-secondary ms-2"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Thêm mới</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onclick="clearInput()"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container" id="main">
+                  <div
+                    class="row justify-content-center align-items-center mt-4"
+                  >
+                    <div class="col-lg-10 col-lg-offset-10">
+                      <form id="edit-form">
+                        <div class="form-group row mb-3">
+                          <label for="input-id" class="col-sm-3 col-form-label"
+                            >Mã phim</label
+                          >
+                          <div class="col-sm-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-id"
+                              placeholder="Input ID"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-name"
+                            class="col-sm-3 col-form-label"
+                            >Tên phim</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Tên phim"
+                            />
+                          </div>
+                          <label
+                            for="input-age"
+                            class="col-sm-1 col-form-label"
+                            style="text-align: right"
+                            >Thể loại</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-category"
+                              placeholder="Thể loại"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-type"
+                            class="col-sm-3 col-form-label"
+                            >Thời lượng</label
+                          >
+                          <div class="col-sm-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-thoiluong"
+                              placeholder="Thời lượng"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-type"
+                            class="col-sm-3 col-form-label"
+                            >Ảnh phim</label
+                          >
+                          <div class="col-sm-9">
+                            <input
+                              type="file"
+                              class="form-control"
+                              id="input-img"
+                              placeholder="Hình ảnh"
+                              onchange="previewImage(event)"
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-weight"
+                            class="col-sm-3 col-form-label"
+                            >Lịch chiếu</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="input-lichchieu"
+                              placeholder="Input Weight"
+                            />
+                          </div>
+
+                          <label
+                            for="input-length"
+                            class="col-sm-3 col-form-label"
+                            style="text-align: right"
+                            >Giá vé</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="input-giave"
+                              placeholder="Input Length"
+                            />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  onclick="clearInput()"
+                >
+                  Thoát
+                </button>
+                <button type="button" class="btn btn-primary" id="submit-btn">
+                  Thêm mới
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+        <!-- viewModal -->
+        <div
+          class="modal fade"
+          id="viewModal"
+          tabindex="-1"
+          aria-labelledby="viewModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="viewModalLabel">Chi tiết</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                  onclick="clearInput()"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container" id="main">
+                  <div
+                    class="row justify-content-center align-items-center mt-4"
+                  >
+                    <div class="col-lg-10 col-lg-offset-10">
+                      <form id="edit-form">
+                        <div class="form-group row mb-3 text-center">
+                          <img src="image 2.png" width="300"/>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label for="input-id" class="col-sm-3 col-form-label"
+                            >Mã phim</label
+                          >
+                          <div class="col-sm-9">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-id"
+                              placeholder="Input ID"
+                              disabled
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-name"
+                            class="col-sm-3 col-form-label"
+                            >Tên phim</label
+                          >
+                          <div class="col-sm-5">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="input-name"
+                              placeholder="Tên phim"
+                              disabled
+                            />
+                          </div>
+                          <label
+                            for="input-age"
+                            class="col-sm-1 col-form-label"
+                            style="text-align: right"
+                            >Thể loại</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="input-category"
+                              placeholder="Thể loại"
+                              disabled
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-type"
+                            class="col-sm-3 col-form-label"
+                            >Thời lượng</label
+                          >
+                          <div class="col-sm-9">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="input-thoiluong"
+                              placeholder="Thời lượng"
+                              disabled
+                            />
+                          </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                          <label
+                            for="input-weight"
+                            class="col-sm-3 col-form-label"
+                            >Lịch chiếu</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="input-lichchieu"
+                              placeholder="Input Weight"
+                              disabled
+                            />
+                          </div>
+
+                          <label
+                            for="input-length"
+                            class="col-sm-3 col-form-label"
+                            style="text-align: right"
+                            >Giá vé</label
+                          >
+                          <div class="col-sm-3">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="input-giave"
+                              placeholder="Input Length"
+                              disabled
+                            />
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container" style="max-width: 90%">
+          <!-- Button trigger modal -->
+          <div class="d-flex justify-content-end mb-4">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              Thêm mới
+            </button>
+          </div>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Mã phim</th>
+                <th scope="col">Tên phim</th>
+                <th scope="col">Thể loại</th>
+                <th scope="col">Thời lượng</th>
+                <th scope="col">Lịch chiếu</th>
+                <th scope="col">Giá vé</th>
+                <th scope="col">...</th>
+              </tr>
+            </thead>
+                <tr>
+                    <td>124</td>
+                    <td>Venom</td>
+                    <td>Hành động</td>
+                    <td>89 phút</td>
+                    <td>18:00, 15/11/2024</td>
+                    <td>75,000 VND</td>
+                    <td><img src="view.png"/><img src="edit.png"/><img src="delete.png"/></td>
+                </tr>
+                <tr>
+                    <td>125</td>
+                    <td>Wicked</td>
+                    <td>Khoa học-Viễn tưởng</td>
+                    <td>101 phút</td>
+                    <td>22:00, 7/12/2024</td>
+                    <td>75,000 VND</td>
+                    <td><img src="view.png"/><img src="edit.png"/><img src="delete.png"/></td>
+                </tr>
+                <tr>
+                    <td>126</td>
+                    <td>Mật mã đỏ</td>
+                    <td>Tâm lý - Hài hước</td>
+                    <td>143 phút</td>
+                    <td>13:00, 21/11/2024</td>
+                    <td>75,000 VND</td>
+                    <td><img src="view.png"/><img src="edit.png"/><img src="delete.png"  /></td>
+                </tr>
+                <tr>
+                    <td>127</td>
+                    <td>Moana</td>
+                    <td>Hoạt hình</td>
+                    <td>100 phút</td>
+                    <td>23:00, 18/12/2024</td>
+                    <td>75,000 VND</td>
+                    <td><img src="view.png" /><img src="edit.png"/><img src="delete.png"  /></td>
+                </tr>
+            </tbody>
+          </table>
+          <script>
+        function deletePet() {
+            alert("Bạn đã nhấn nút xóa!");
+        }
+    </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
+    <script src="./script/storage.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

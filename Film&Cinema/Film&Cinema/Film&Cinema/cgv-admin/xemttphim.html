@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Film&Cinema</title>
+
+    <!-- CSS only -->
+    
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      table .bi-check-circle-fill {
+        color: green;
+      }
+
+      table .bi-x-circle-fill {
+        color: red;
+      }
+
+      table .btn.btn-danger {
+        font-size: 14px;
+      }
+         .info-container {
+            display: flex; /* Kích hoạt Flexbox */
+            flex-wrap: wrap; /* Cho phép xuống dòng nếu không đủ chỗ */
+            gap: 20px; /* Khoảng cách giữa các mục */
+            justify-content: flex-start; /* Căn bắt đầu từ trái */
+            align-items: flex-start; /* Căn nội dung trên cùng */
+        }
+
+        .info-item {
+            flex: 1 1 calc(25% - 20px); /* Chia mỗi mục chiếm 25% chiều rộng container, trừ đi khoảng cách */
+            min-width: 150px; /* Đảm bảo kích thước tối thiểu */
+        }
+
+        .info-item p {
+            margin: 0; /* Loại bỏ khoảng cách giữa các đoạn văn */
+        }
+
+.chitietphim-flex {
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Giữ căn giữa */
+}
+
+        b {
+            font-weight: bold; /* Làm đậm chữ */
+        }
+        /* Đảm bảo các nút có kích thước bằng nhau */
+.btn {
+    width: 120px; /* Đặt chiều rộng cho nút */
+    height: 40px; /* Đặt chiều cao cho nút */
+    display: flex; /* Sử dụng flex để căn giữa văn bản */
+    align-items: center; /* Căn giữa văn bản theo chiều dọc */
+    justify-content: center; /* Căn giữa văn bản theo chiều ngang */
+}
+
+/* Nút màu trắng */
+.btn-white {
+    background-color: #fff; /* Màu nền trắng */
+    border-color: #ccc; /* Màu viền sáng */
+    color: #000; /* Màu chữ đen */
+}
+
+/* Nút màu tím */
+.btn-purple {
+    background-color: #800080; /* Màu tím */
+    border-color: #800080; /* Màu viền tím */
+    color: #fff; /* Màu chữ trắng */
+}
+
+/* Thêm hiệu ứng khi hover */
+.btn-white:hover {
+    background-color: #f0f0f0; /* Màu nền khi hover */
+    border-color: #bbb; /* Màu viền khi hover */
+}
+
+.btn-purple:hover {
+    background-color: #9b30b1; /* Màu tím nhạt khi hover */
+    border-color: #9b30b1; /* Màu viền tím nhạt khi hover */
+}
+            </style>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar" class="">
+        <div class="sidebar-header" id="sidebar-title">
+          <h3><img width="30" src="./image 1.png"/>Film&Cinema</h3>
+          <strong><i class="bi bi-list"></i></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li class="">
+            <a href="./index.html">
+              <i class="bi bi-house"></i>
+              Trang chủ
+            </a>
+          </li>
+          <li class="active">
+            <a href="./phim.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý phim
+            </a>
+          </li>
+          <li class="">
+            <a href="rap.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý rạp
+            </a>
+          </li>
+          <li class="">
+            <a href="phongchieu.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý phòng chiếu
+            </a>
+          </li>
+          <li class="">
+            <a href="suatchieu.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý suất chiếu
+            </a>
+          </li>
+          <li class="">
+            <a href="ve.html">
+              <i class="bi bi-pencil-square"></i>
+              Quản lý vé
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content Holder -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Thông tin chi tiết phim</a>
+            <button class="btn btn-danger"><a href="../admin.html">Đăng xuất</a></button>
+        </nav>
+
+      <main>
+        <div class="container">
+            <div class="chitietphim">
+                <div class="chitietphim-flex">
+                    <div class="text-center; margin: 0; padding: 0;">
+                        <img  style="width: 350px;display: block; margin: 0 auto;" src="image panda.jpg"/>
+                    </div>
+                    <div>
+                        <p class="d-flex align-items-center justify-content-center" 
+                            style="background-color: #9B1F53; 
+                            width: 300px; 
+                            height: 50px; 
+                            color: #fff; 
+                            font-weight: bold;"
+                        >KUNGFU PANDA 4</p>
+                            <div class="info-container">
+                                    <p><b>Thể loại</b>: Hoạt hình, Hài</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Quốc Gia</b>: Hoa Kỳ</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Đạo diễn</b>: Mike Mitchell</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Nhà sản xuất</b>: Rebecca Huntley</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Ngày công chiếu</b>: 15/12/2024</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Lịch chiếu</b>: 30/12/2024</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Thời lượng</b>: 94 phút</p>
+                                </div>
+                                <div class="info-container">
+                                    <p><b>Giá</b>: 75.000 đồng</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+              <p><b>Nội dung</b></p>
+                        <p>Sau khi hoàn thành vai trò anh hùng bảo vệ Thung lũng Bình Yên, Po được giao trọng trách lớn hơn: trở thành Thủ lĩnh Tinh thần của cả vùng. Với trách nhiệm này, anh phải tìm kiếm và huấn luyện người kế nhiệm cho vị trí Thần Long Đại Hiệp, một nhiệm vụ không hề dễ dàng.</p>
+                        <p>Trong hành trình mới, Po gặp Zhen, một cô cáo nhanh nhẹn và tinh ranh, vốn là một kẻ trộm chuyên nghiệp. Bất chấp sự đối lập về tính cách, cả hai hợp tác để đối mặt với mối đe dọa lớn: Pháp sư Tắc Kè Bông, một kẻ phản diện nguy hiểm có khả năng biến hình thành bất kỳ sinh vật nào và sao chép kỹ năng kung fu chỉ bằng cách chạm vào họ.</p>
+                        <p>Po phải vượt qua thử thách không chỉ bằng sức mạnh võ thuật mà còn bằng sự trưởng thành trong tâm hồn, sự lãnh đạo và niềm tin vào những người xung quanh.</p>
+                        <p>KUNGFU PANDA 4 | Dự kiến khởi chiếu: 15.12.2024</p>
+
+            </div>
+             <div class="d-flex align-items-center justify-content-center">
+                <div data-bs-toggle="modal" data-bs-target="#xemttphim" class="text-center" style="width: 120px; color: #fff; font-weight: 600;">
+                    <!-- Nút màu trắng bên trái -->
+                    <button class="ms-3 btn btn-white"><a href="phim.html">
+                        TRỞ VỀ
+                    </a></button>
+                </div>
+            <div class="d-flex align-items-center justify-content-center">
+                        <div data-bs-toggle="modal" data-bs-target="#xemttphim" class="text-center" style="width: 120px; color: #fff; font-weight: 600;"><button class="ms-3 btn btn-purple">
+                            CHỈNH SỬA
+                        </button></div>
+                    </div>
+
+<!-- Show chọn phim -->
+    <div
+      class="modal fade"
+      id="xemttphim"
+      tabindex="-1"
+      aria-labelledby="xemttphim"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+            <div class="text-center text-white p-1" style="background: #9f2b68;">CHỈNH SỬA PHIM</div>
+            <div class="container">
+            <div class="chitietphim">
+                    <div class="text-center; margin: 0; padding: 0;">
+                        <img  style="width: 350px;display: block; margin: 0 auto;" src="image panda.jpg"/>
+                    </div>
+                  </div>
+                </div>
+
+            <hr>
+            
+
+<div class="d-flex justify-content-between align-items-center mb-5 px-3">
+
+            <!-- Thành phần bên trái -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Tên phim</b>
+                <input class="form-control" value="KUNGFU PANDA 4"style="flex: 1;"> 
+            </div>
+
+            <!-- Thành phần bên phải -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Thể loại</b>
+                <input class="form-control" value="Hoạt hình, Hài"style="flex: 1;"> 
+                
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-5 px-3">
+
+            <!-- Thành phần bên trái -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Quốc gia</b>
+                <input class="form-control" value="Hoa Kỳ"style="flex: 1;"> 
+              
+            </div>
+
+            <!-- Thành phần bên phải -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Đạo diễn</b>
+                <input class="form-control" value="Mike Mitchell"style="flex: 1;"> 
+              
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-5 px-3">
+
+            <!-- Thành phần bên trái -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Nhà sản xuất</b>
+                <input class="form-control" value="Rebecca Huntley"style="flex: 1;"> 
+               
+            </div>
+
+            <!-- Thành phần bên phải -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Thời lượng</b>
+                <input class="form-control" value="94 phút"style="flex: 1;"> 
+              
+            </div>
+        </div>
+
+       
+<div class="d-flex justify-content-between align-items-center mb-5 px-3">
+
+            <!-- Thành phần bên trái -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Ngày công chiếu</b>
+                <input class="form-control" value="15/12/2024"style="flex: 1;"> 
+               
+            </div>
+
+            <!-- Thành phần bên phải -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Lịch chiếu</b>
+                <input class="form-control" value="30/12/2024"style="flex: 1;"> 
+              
+            </div>
+        </div>
+         <div class="d-flex justify-content-between align-items-center mb-5 px-3">
+
+            <!-- Thành phần bên trái -->
+            <div class="d-flex align-items-center" style="gap: 10px;">
+                <b style="width: 100px;">Giá</b>
+                <input class="form-control" value="75.000 VNĐ"style="flex: 1;"> 
+               
+            </div>
+        </div>
+            <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                  onclick="clearInput()"
+                >
+                  Thoát
+                </button>
+                <div data-bs-toggle="modal" data-bs-target="#datve" class="text-center" ><button type="button" class="btn btn-primary" id="submit-btn"><a href="xemttphim.html">
+                  Cập nhật</a>
+                </button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script></script>
+    <script src="./script/storage.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

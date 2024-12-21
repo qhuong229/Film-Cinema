@@ -1,0 +1,250 @@
+body {
+    background-color: #0b001a;
+}
+
+.navbar {
+    background-color: #0b001a;
+    padding: 1rem;
+}
+.nav-item.active {
+    font-weight: 800;
+}
+.navbar-brand {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    color: white !important;
+    margin-right: 1.5rem;
+}
+
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-icon, .menu-icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container bọc ô tìm kiếm và icon */
+.search-bar {
+    position: relative;
+    width: 200px; /* Chiều rộng tổng thể của ô tìm kiếm */
+}
+
+/* Ô tìm kiếm */
+.search-bar input {
+    width: 200px;
+    padding: 8px 35px 8px 10px; /* Chừa khoảng cho icon bên phải */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+/* Icon tìm kiếm */
+.search-bar .search-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Đặt icon gần mép phải */
+    transform: translateY(-50%);
+    pointer-events: none; /* Đảm bảo icon không ảnh hưởng đến thao tác nhập */
+    color: #888; /* Màu icon */
+    font-size: 18px;
+}
+
+.carousel-item img {
+    border-radius: 8px;
+}
+
+/* Previous styles remain the same */
+        
+.movie-section {
+    padding: 2rem 0;
+}
+
+.section-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.movie-card {
+    background-color: transparent;
+    border: none;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card .card-title {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.movie-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: #000;
+    font-size: 0.9rem;
+    background-color: #fff;
+    padding: 10px ;
+}
+
+.movie-info-row span {
+    text-align: center;
+}
+
+.movie-info-row span:last-child {
+    border-left: 1px solid #000
+}
+
+.xemthem {
+    background-color: #4D4C4C;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    width: 326px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* footer */
+
+.footer {
+    background-color: #D9D9D9;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+.footer h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #000
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+    color: #000;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #333;
+}
+
+/* modal */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    padding: 20px;
+}
+
+.modal-title {
+    font-weight: bold;
+    color: #000;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.modal a {
+    color: #9F2B68;
+    text-decoration: none;
+}
+
+.modal a:hover {
+    text-decoration: underline;
+}
+
+.maxn {
+    background-color: gray;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    margin-top: 31px;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .info-table th,
+  .info-table td {
+    border: 1px solid #000;
+    padding: 10px;
+  }
+  
+  .info-table thead th {
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+  
+  .info-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  /* Loại bỏ spinner trong ô nhập liệu số trên các trình duyệt */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+
+
+ 
